@@ -28,7 +28,7 @@ Já tinha conhecimento sobre esse atributo no HTML, para ter certeza preenchi o 
 Como resposta deu erro, o que não deveria acontecer pois cidade com o campo em branco deveria aceitar meu envio.
 
 Como foi resolvido este bug?
-Para resolver apenas tirei o required no final da linha do meu código.
+Para resolver tirei o required no final da linha do meu código.
 Assim aceitando meu envio com o campo em branco.
 
 errado: 
@@ -47,7 +47,7 @@ Abri nosso arquivo usando live server, apertei f12 e dei um inspect na logo para
 Nossa logo definida como class .logo estava com text-align: left fazendo assim com que ele fique com seu posicionamento para esquerda.
 
 Como foi resolvido este bug?
-Apenas troquei da nossa class .logo o text-align left para center.
+Troquei da nossa class .logo o text-align left para center.
 
 errado:
 .logo {
@@ -63,3 +63,19 @@ correto:
 
 # 3 - Bug no JS:
 
+Quando clicamos para editar e salvar um dado inserido, estava pegando os nomes das colunas e sobrescrevendo as nossas informações.
+
+Como encontrei este bug?
+Usei console.log(map) e console.log(key) para verificar o que estava passando de informação.
+O valor do for estava recebendo apenas a chave fazendo com que repetisse os dados do mesmo.
+O certo seria pegar os valores das minhas chaves pelo input no edit.
+
+Como foi resolvido este bug?
+ this._table[i][key] = key; o certo seria receber o nosso parâmetro map = {} aonde pegaria os nossos valores do objeto
+ junto com a key.
+
+ Errado:
+ this._table[i][key] = key;
+
+ correto:
+ this._table[i][key] = map[key]  

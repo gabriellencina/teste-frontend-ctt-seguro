@@ -60,14 +60,15 @@ class MyCrud {
     update(i, map = {}) {
         //Substitui os valores do objeto pelos campos correspondentes aos de map
         for (let key in map) {
-            this._table[i][key] = key;
+            this._table[i][key] = map[key]       
         }
-        localStorage.setItem("tableCrud", JSON.stringify(this._table[i][key]));
+        localStorage.setItem("tableCrud", JSON.stringify(this._table));
     }
 
     delete(i) {
         //Remove o objeto de posição i da lista
         //TODO Você deve implementar.
+
         
     }
 
